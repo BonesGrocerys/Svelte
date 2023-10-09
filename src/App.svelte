@@ -25,7 +25,7 @@
 
 	@media (min-width: 768px) {
 		main {
-			max-width: none;
+			max-width: 100%;
 		}
 	}
 </style>
