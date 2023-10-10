@@ -1,17 +1,22 @@
-
+<script>
+  	import { Router, Route, Link } from 'svelte-routing';
+</script>
 <header>
         <div>
             logo
         </div>
         <div class="button-content">
-            <button>Home</button>
-            <button>About</button>
-            <button>Login</button>
+            <Router>
+              <nav> 
+                <button><Link to="/Home" >Home</Link></button>
+                <button ><Link to="/login" >Login</Link></button>
+              </nav>
+            </Router>
         </div>
 </header>
 <style>
      header {
-  background-color: #333;
+  background-color: #d9d9d9;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -21,17 +26,29 @@
 .button-content{
     display: flex;
 }
-.button-content > button {
-  margin-right: 10px;
-  border-radius: 15px;
-  width: 100px;
-  border: none;
-  cursor: pointer;
+button {
+  border-radius: 25px;
 }
 
 button:hover {
     opacity: 50%;
 }
+
+:global(a) {
+        text-decoration: none;
+        width: 100px;
+        display: block;
+        
+    }
+
+    :global(a:visited) {
+      color: black;
+    }
+
+    :global(a:hover) {
+      color: black;
+      text-decoration: none;
+    }
 
 
 @media screen and (max-width: 768px) {
